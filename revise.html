@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form input:focus{
+        border: 4px dashed blue;
+    }
+    form input:invalid {
+        border: 4px solid red;
+    }
+</style>
+<body>
+<form>
+    <label>Enter your name</label>
+     <input type="text" name="name" id="name" placeholder="Name" required maxlength="10" minlength="3">
+     <input type="password" name="password" id="password" placeholder="Name" value="David">
+
+     <div>
+        <label>Enter your email</label>
+        <input type="email" name="email" value="shameel@gmail.com">
+     </div>
+
+
+     <div>
+        <label>Enter your Date of Birth</label>
+        <input type="date" name="date">
+     </div>
+
+     <div>
+        <label>Enter your age</label>
+        <input type="number" name="age" min="18" max="60">
+     </div>
+
+     <div>
+        <label>Select your course</label>
+        MERN<input type="checkbox" name="course" checked>
+     </div>
+
+     <div>
+        <label>Upload your resume</label>
+        <input type="file" name="resume" multiple accept="image/*"> 
+     </div>
+
+     <div>
+        <label>Give me your linkedIn page</label>
+        <input type="url" name="linkedin">
+     </div>
+
+     <div>
+        <label>Select your salary range (0-100K)</label>
+        <input type="range" name="salary">
+     </div>
+
+     <label>Select your fav color</label>
+     <input list="colors" name="color">
+     <datalist id="colors">
+        <option value="blue"></option>
+        <option value="red"></option>
+     </datalist>
+
+     <div>
+        <label>Choose color</label>
+        <input type="color" name="colorfav">
+     </div>
+
+     <label for="country_code">Country code:</label>
+     <input type="text" id="country_code" name="country_code"
+     pattern="[A-Za-z]{3}" title="Three letter country code"><br><br>
+     <input type="submit">
+
+     <div>
+        <label>Search</label>
+        <input type="search" name="search">
+     </div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Skillspire</title>
+</head>
+<body>
+    <header>
+        <h1>Please provide feedback for your course</h1>
+    </header>
+    <main>
+        <form id="feedback-form">
+            <div>
+                <label for="name" id="NameLabel">
+                    NAME
+                </label>
+                <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                required
+                />
+            </div>
+            <div>
+                <label for="email" id="emailLabel">
+                    Email
+                </label>
+                <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+                />
+            </div>
+            <div>
+                <label for="duration" id="durationL">
+                    How long was your course?
+                </label>
+                <input
+                type="number"
+                name="duration"
+                id="duration"
+                placeholder="Enter your duration of course"
+                required
+                />
+            </div>
+            <div>
+                <label for="course" id="courseL">
+                    Select your course
+                </label>
+                <select id="course" name="course">
+                    <option>MERN</option>
+                    <option>PYTHON</option>
+                    <option>SQL</option>
+                    <option>JAVA</option>
+                </select>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
