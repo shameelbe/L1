@@ -2,7 +2,7 @@
 <head>
 <title>Student Registration Form</title>
 <link rel="stylesheet" href="register.css">
-
+<script src="register.js"></script>
 </head>
  
 <body>
@@ -196,17 +196,17 @@ Maried <input type="radio" name="Gender" value="Female" />
      
     <td>
     MERN
-    <input type="checkbox" name="Hobby_Drawing" value="Drawing" />
+    <input type="checkbox" id="selectMern"/>
     PYTHON
-    <input type="checkbox" name="Hobby_Singing" value="Singing" />
+    <input type="checkbox"/>
     SQL
-    <input type="checkbox" name="Hobby_Dancing" value="Dancing" />
+    <input type="checkbox"/>
     JAVA
-    <input type="checkbox" name="Hobby_Cooking" value="Cooking" />
+    <input type="checkbox"/>
     <br />
     Others
-    <input type="checkbox" name="Hobby_Other" value="Other">
-    <input type="text" name="Other_Hobby" maxlength="30" />
+    <input type="checkbox" value="Other">
+    <input type="text" maxlength="30" />
     </td>
     </tr>
  
@@ -238,7 +238,7 @@ Maried <input type="radio" name="Gender" value="Female" />
 <td>2</td>
 <td>Undergrad</td>
 <td><input type="text" name="Graduation_Board" maxlength="30" /></td>
-<td><input type="text" name="Graduation_Percentage" maxlength="30" /></td>
+<td><input type="text" name="Graduation_Percentage" maxlength="30" id="uGpa" /></td>
 <td><input type="text" name="Graduation_YrOfPassing" maxlength="30" /></td>
 </tr>
  
@@ -266,23 +266,25 @@ Maried <input type="radio" name="Gender" value="Female" />
 <td>Preferred<br />Timing</td>
 <td>
 Morning
-<input type="radio" name="Course_BCA" value="BCA">
+<input type="radio"  id="morning">
 Noon
-<input type="radio" name="Course_BCom" value="B.Com">
+<input type="radio">
 Evening
-<input type="radio" name="Course_BSc" value="B.Sc">
+<input type="radio">
 </td>
 </tr>
  
 <!----- Submit and Reset ------------------------------------------------->
 <tr>
 <td colspan="2" style="text-align: center;">
-<input type="submit" value="Submit">
+<input type="submit" value="Submit" onclick="processForm()">
 <input type="reset" value="Reset">
 </td>
 </tr>
 </table>
- 
+ <div>
+    <p id="result"></p>
+ </div>
 </form>
  
 </body>
