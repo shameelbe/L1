@@ -178,7 +178,7 @@ Maried <input type="radio" name="Gender" value="Female" />
 <!----- State ---------------------------------------------------------->
 <tr>
 <td>STATE</td>
-<td><input type="text" name="State" maxlength="30" />
+<td><input type="text" name="State" maxlength="30" id="state"/>
 (max 30 characters a-z and A-Z)
 </td>
 </tr>
@@ -186,7 +186,7 @@ Maried <input type="radio" name="Gender" value="Female" />
 <!----- Country ---------------------------------------------------------->
 <tr>
 <td>COUNTRY</td>
-<td><input type="text" name="Country" value="USA" readonly="readonly" /></td>
+<td><input type="text" name="Country" value="USA" readonly="readonly" id="country"/></td>
 </tr>
  
 <!----- Hobbies ---------------------------------------------------------->
@@ -198,14 +198,14 @@ Maried <input type="radio" name="Gender" value="Female" />
     MERN
     <input type="checkbox" id="selectMern"/>
     PYTHON
-    <input type="checkbox"/>
+    <input type="checkbox" id="selectPython"/>
     SQL
-    <input type="checkbox"/>
+    <input type="checkbox" id="selectSql"/>
     JAVA
-    <input type="checkbox"/>
+    <input type="checkbox" id="selectJava"/>
     <br />
     Others
-    <input type="checkbox" value="Other">
+    <input type="checkbox" value="Other" id="selectOther">
     <input type="text" maxlength="30" />
     </td>
     </tr>
@@ -237,17 +237,17 @@ Maried <input type="radio" name="Gender" value="Female" />
 <tr>
 <td>2</td>
 <td>Undergrad</td>
-<td><input type="text" name="Graduation_Board" maxlength="30" /></td>
+<td><input type="text" name="Graduation_Board" maxlength="30" id=ugB/></td>
 <td><input type="text" name="Graduation_Percentage" maxlength="30" id="uGpa" /></td>
-<td><input type="text" name="Graduation_YrOfPassing" maxlength="30" /></td>
+<td><input type="text" name="Graduation_YrOfPassing" maxlength="30" id="uYear"/></td>
 </tr>
  
 <tr>
 <td>3</td>
 <td>Graduate</td>
-<td><input type="text" name="Masters_Board" maxlength="30" /></td>
-<td><input type="text" name="Masters_Percentage" maxlength="30" /></td>
-<td><input type="text" name="Masters_YrOfPassing" maxlength="30" /></td>
+<td><input type="text" name="Masters_Board" maxlength="30" id="gradB"/></td>
+<td><input type="text" name="Masters_Percentage" maxlength="30" id="gradGpa"/></td>
+<td><input type="text" name="Masters_YrOfPassing" maxlength="30" id="gradYear"/></td>
 </tr>
  
 <tr>
@@ -266,11 +266,11 @@ Maried <input type="radio" name="Gender" value="Female" />
 <td>Preferred<br />Timing</td>
 <td>
 Morning
-<input type="radio"  id="morning">
+<input type="radio" name="timing" id="timing" value="morning">
 Noon
-<input type="radio">
+<input type="radio" name="timing" id="timing" value="noon">
 Evening
-<input type="radio">
+<input type="radio" name="timing" id="timing" value="evening">
 </td>
 </tr>
  
@@ -282,8 +282,17 @@ Evening
 </td>
 </tr>
 </table>
- <div>
-    <p id="result"></p>
+ <div id = "results">
+    <p id="courseSelected"></p>
+    <p id="result0"></p>
+    <hr>
+    <p id="feeBeforeDiscounts"></p>
+    <p id="discountApplied"></p>
+    <p id="result1"></p>
+    <hr>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
  </div>
 </form>
  
