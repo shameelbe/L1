@@ -15,85 +15,75 @@ const GPA_CREDIT = 250;
 // MERN - 0, PYTHON 1, SQL 2, JAVA 3, OTHER 4
 const COURSE_FEE = [4750, 3250, 1500, 4000, 3000];
 
-function processForm()
-{
-// write a rough copy of what I want to achieve
-// console.log(TAX_PERCENTAGE);
-// console.log(typeof TAX_PERCENTAGE);
-// console.log(COURSE_FEE);
+let state;
+let country; 
+let isMernSelected;
+let isPythonSelected;
+let isJavaSelected;
+let isSqlSelected;
+let isOtherSelected;
+let timing;
 
+function getInput()
+{
 // Get all the input paramaters - use document DOM
 // assign this input params to a variable
-let state = document.getElementById("state").value;
-let country = document.getElementById("country").value; 
-let isMernSelected = document.getElementById("selectMern").checked;
-let isPythonSelected = document.getElementById("selectPython").checked;
-let isJavaSelected = document.getElementById("selectJava").checked;
-let isSqlSelected = document.getElementById("selectSql").checked;
-let isOtherSelected = document.getElementById("selectOther").checked;
-let timing = document.getElementsByName("timing");
-// MOrning
-let isMorning = timing[0].checked;
-// Noon
-let isNoon = timing[1].checked;
-// Evening
-let isEvening = timing[2].checked;
+    state = document.getElementById("state").value;
+    country = document.getElementById("country").value; 
+    isMernSelected = document.getElementById("selectMern").checked;
+    isPythonSelected = document.getElementById("selectPython").checked;
+    isJavaSelected = document.getElementById("selectJava").checked;
+    isSqlSelected = document.getElementById("selectSql").checked;
+    isOtherSelected = document.getElementById("selectOther").checked;
+    timing = document.getElementsByName("timing");
+    isMorning = timing[0].checked;
+    isNoon = timing[1].checked;
+    isEvening = timing[2].checked;
+    gradB = document.getElementById("gradB").value;
+    uGpa = Number(document.getElementById("uGpa").value);
+}
 
-// Grad
-let gradB = document.getElementById("gradB").value;
+function computeFee(feeBeforeTax, selectedCourses)
+{
+    if (isMernSelected)
+    {
+        feeBeforeTax = feeBeforeTax + COURSE_FEE[0];
+        selectedCourses.push(`MERN : $${COURSE_FEE[0]}`);
+    }
+    
+    if (isPythonSelected)
+    {
+        feeBeforeTax = feeBeforeTax + COURSE_FEE[1];
+        selectedCourses.push(`PYTHON : $${COURSE_FEE[1]}`);
+    }
+    
+    if (isSqlSelected)
+    {
+        feeBeforeTax = feeBeforeTax + COURSE_FEE[2];
+        selectedCourses.push(`SQL : $${COURSE_FEE[2]}`);
+    }
+    
+    if (isJavaSelected)
+    {
+        feeBeforeTax = feeBeforeTax + COURSE_FEE[3];
+        selectedCourses.push(`JAVA : $${COURSE_FEE[3]}`);
+    }
+    
+    if (isOtherSelected)
+    {
+        feeBeforeTax = feeBeforeTax + COURSE_FEE[4];
+        selectedCourses.push(`OTHER : $${COURSE_FEE[4]}`);
+    }
 
+    return feeBeforeTax;
+}
 
-// UnderGrad GPA
-let uGpa = Number(document.getElementById("uGpa").value);
-// console.log(typeof uGpa);
-// console.log(uGpa > 3.25);
-
+function processForm()
+{
+getInput();
 let selectedCourses = [];
 let feeBeforeTax = 0;
-
-// Fee COmputaton
-if (isMernSelected)
-{
-    feeBeforeTax = feeBeforeTax + COURSE_FEE[0];
-    selectedCourses.push(`MERN : $${COURSE_FEE[0]}`);
-}
-
-if (isPythonSelected)
-{
-    feeBeforeTax = feeBeforeTax + COURSE_FEE[1];
-    selectedCourses.push(`PYTHON : $${COURSE_FEE[1]}`);
-}
-
-if (isSqlSelected)
-{
-    feeBeforeTax = feeBeforeTax + COURSE_FEE[2];
-    selectedCourses.push(`SQL : $${COURSE_FEE[2]}`);
-}
-
-if (isJavaSelected)
-{
-    feeBeforeTax = feeBeforeTax + COURSE_FEE[3];
-    selectedCourses.push(`JAVA : $${COURSE_FEE[3]}`);
-}
-
-if (isOtherSelected)
-{
-    feeBeforeTax = feeBeforeTax + COURSE_FEE[4];
-    selectedCourses.push(`OTHER : $${COURSE_FEE[4]}`);
-}
-
-// console.log(selectedCourses);
-// console.log(feeBeforeTax);
-
-// Creating new variables which will be result variable
-// Computing the result
-// Total, Tax, Final Amount
-
-// If ( Check whether Array course is checked - Search for the course)
-// compute sum that is you will add to it - Total
-
-// If - If - 5 of them
-
+feeBeforeTax = computeFee(feeBeforeTax, selectedCourses);
 let totalBeforeDiscounts = feeBeforeTax;
 console.log(totalBeforeDiscounts);
 // Calculate Discounts
